@@ -13,15 +13,8 @@ PrimeNet is a high-precision deep learning model designed for predicting the eff
 ## Installation
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/PrimeNet.git
+git clone https://github.com/bm2-lab/PrimeNet.git
 cd PrimeNet
-
-# Create a virtual environment
-python -m venv primenet_env
-source primenet_env/bin/activate  # On Windows, use `primenet_env\Scripts\activate`
-
-# Install dependencies
-pip install -r requirements.txt
 ```
 
 ## Usage
