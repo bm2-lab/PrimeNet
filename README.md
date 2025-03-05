@@ -1,49 +1,44 @@
 # PrimeNet: A Deep Learning Model for Prime Editing Efficiency Prediction
 
 ## Introduction
-PrimeNet is a high-precision deep learning model designed for predicting the efficiency of prime editing. By integrating sequence-based features and epigenetic modifications, PrimeNet achieves robust cross-cell line performance. The model utilizes CNN-based feature extraction and an attention mechanism optimized with a Sigmoid activation function to capture essential editing determinants.
+PrimeNet is a deep learning model designed to predict Prime editing efficiency with high accuracy by integrating epigenetic factors such as chromatin accessibility and DNA methylation. Unlike existing models, PrimeNet leverages multi-scale convolution and attention mechanisms to extract diverse sequence features, achieving superior generalization across different conditions. Our results show that PrimeNet achieves a Spearman correlation coefficient of 0.94, outperforming existing models.
 
-## Features
-- **Sequence-to-Image Transformation**: Converts DNA sequences into images for CNN-based feature extraction.
-- **Attention Mechanism**: Enhances feature selection to improve model interpretability.
-- **Epigenetic Context Integration**: Considers chromatin accessibility for better generalization.
-- **Cross-cell Line Robustness**: Demonstrates high predictive accuracy across different cellular environments.
-- **Saliency Map Visualization**: Uses Integrated Gradients to highlight key sequence positions affecting editing efficiency.
+## Model input
+- **Sequence**: Wild Sequence and the Edited Sequence.
+- **Epigenetic information**: chromatin accessibility and DNA methylation status. For chromatin accessibility features, a site is labeled "Y" if it is chromatin accessible and "N" otherwise. For methylation features, a site is labeled as "Y" if it is methylated and "N" if it is unmethylated.
+- **Functional area information**: The positions of Protospacer, PAM, PBS, and RT in the sequence.
+### Data Encoding  
+We encode the input data as an image for deep learning processing:  
+
+![Data Encoding Example](images/encoding_example.png)
+
+## Model output
+- **valid editing efficiency**: The proportion of sequences that are successfully edited as intended, meaning the desired genetic modification is correctly introduced.
+- **unedited efficiency**: The proportion of sequences that remain unchanged, indicating that Prime editing did not occur.
+- **erroneous editing efficiency**: The proportion of sequences that were edited incorrectly, meaning unintended modifications occurred instead of the expected edit.
 
 ## Installation
+
+### 1. Clone the Repository  
 ```bash
 # Clone the repository
 git clone https://github.com/bm2-lab/PrimeNet.git
 cd PrimeNet
 ```
+### 2. Install Dependencies
+```bash
+# Ensure you have Python 3.8+ installed, then run:
+pip install numpy pandas torch scikit-learn scipy
+```
 
 ## Usage
 ### Training the Model
 ```python
-python train.py --data path/to/dataset --epochs 50 --batch_size 32
+python train_val.py
 ```
-
-### Predicting Editing Efficiency
+### Test the Model
 ```python
-python predict.py --input input_sequences.fasta --output predictions.csv
-```
-
-## Data Format
-Input sequences should be provided in FASTA format, with additional annotations for epigenetic features if available.
-
-## Model Performance
-PrimeNet outperforms existing models in predicting prime editing efficiency, showing superior accuracy in various benchmarks. The model is optimized using hyperparameter tuning with Optuna.
-
-## Citation
-If you use PrimeNet in your research, please cite:
-```
-@article{yourpaper2025,
-  title={PrimeNet: A Deep Learning Framework for Prime Editing Efficiency Prediction},
-  author={Your Name and Collaborators},
-  journal={Bioinformatics Journal},
-  year={2025},
-  doi={your-doi-here}
-}
+python test.py
 ```
 
 ## License
