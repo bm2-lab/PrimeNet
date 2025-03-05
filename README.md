@@ -45,4 +45,4 @@ python test.py
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ## Contact
-For questions or collaborations, please contact [your email] or open an issue on GitHub.
+For questions or collaborations, please contact 2251917@tongji.edu.cn or open an issue on GitHub.
