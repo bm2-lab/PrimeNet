@@ -10,7 +10,7 @@ PrimeNet is a deep learning model designed to predict Prime editing efficiency w
 ### Data Encoding  
 We encode the input data as an image for deep learning processing:  
 
-![Data Encoding Example](images/encoding_example.png)
+![Data Encoding Example](images/encoding.png)
 
 ## Model output
 - **valid editing efficiency**: The proportion of sequences that are successfully edited as intended, meaning the desired genetic modification is correctly introduced.
@@ -31,15 +31,13 @@ cd PrimeNet
 pip install numpy pandas torch scikit-learn scipy
 ```
 
-## Usage
-### Training the Model
-```python
-python train_val.py
-```
-### Test the Model
-```python
-python test.py
-```
+## File Descriptions
+
+- **PrimeNet.pth**: The trained model weights file.
+- **model.py**: A script that defines the model architecture and forward propagation logic.
+- **test.py**: A script used for loading the model and evaluating it on test data.
+- **train_val.py**: A script for training the model and validating it during training.
+
 
 ## License
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
