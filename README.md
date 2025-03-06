@@ -10,7 +10,7 @@ PrimeNet is a deep learning model designed to predict Prime editing efficiency w
 ### Data Encoding  
 We encode the input data as an image for deep learning processing:  
 
-![Data Encoding Example](images/encoding.png)
+![Data Encoding Example](image/encoding.png)
 
 ## Model output
 - **valid editing efficiency**: The proportion of sequences that are successfully edited as intended, meaning the desired genetic modification is correctly introduced.
