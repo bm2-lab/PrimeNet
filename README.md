@@ -40,7 +40,7 @@ pip install numpy pandas torch scikit-learn scipy
 
 
 ## License
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+This project is licensed under the Apache License. See [LICENSE](LICENSE) for details.
 
 ## Contact
 For questions or collaborations, please contact 2251917@tongji.edu.cn or open an issue on GitHub.
