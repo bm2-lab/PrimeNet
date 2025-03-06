@@ -37,6 +37,7 @@ pip install numpy pandas torch scikit-learn scipy
 - **model.py**: A script that defines the model architecture and forward propagation logic.
 - **test.py**: A script used for loading the model and evaluating it on test data.
 - **train_val.py**: A script for training the model and validating it during training.
+- **data**: The dataset. 
 
 
 ## License
